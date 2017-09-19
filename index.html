@@ -1,0 +1,19 @@
+<html>
+	<body>
+
+		<div id="surf-viewer" style='width:600px;height:600px'></div>
+
+		<!--<script src='http://localhost/libs/jquery/3.2.1/jquery.min.js'></script>-->
+    	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+		<script src="surf.js"></script>
+		<script>
+			var s=new Surf({
+				surfPath: 'data/sub-01/surf/lh.pial.ctm',
+				elem: $('#surf-viewer').get(0)
+			});
+			s.display();
+		</script>
+
+	</body>
+</html>
