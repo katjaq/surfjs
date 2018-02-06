@@ -3,6 +3,8 @@
 function Surf(myParams) {
   var me = {
     surfPath: null,     // path to Surf
+
+/*libraries when working locally*/
 /*
     three_url: 'http://localhost/libs/three.js/70/three.min.js',
     trackball_url: 'http://localhost/libs/three.js/70/TrackballControls.js',
@@ -11,18 +13,18 @@ function Surf(myParams) {
     CTMWorker_url: 'http://localhost/libs/three.js/70/CTMWorker.js',
     CTMLoader_url: 'http://localhost/libs/three.js/70/CTMLoader.js',
 */
-	three_url: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/70/three.min.js',
-	trackball_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/controls/TrackballControls.js',
-	lzma_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/lzma.js',
-	ctm_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/ctm.js',
-	CTMWorker_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/CTMWorker.js',
-	CTMLoader_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/CTMLoader.js',
-	
+    three_url: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/70/three.min.js',
+    trackball_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/controls/TrackballControls.js',
+    lzma_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/lzma.js',
+    ctm_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/ctm.js',
+    CTMWorker_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/CTMWorker.js',
+    CTMLoader_url: 'https://cdn.rawgit.com/mrdoob/three.js/r70/examples/js/loaders/ctm/CTMLoader.js',
+
 
     debug: 0,
-    W: null,            	// width
-    H: null,            	// height
-    elem: null,   			// Dom element to display the surface viewer
+    W: null,                // width
+    H: null,                // height
+    elem: null,             // Dom element to display the surface viewer
     camera: null,
     scene:null,
     renderer: null,
@@ -79,7 +81,7 @@ function Surf(myParams) {
 
                 // EVENTS
                 window.addEventListener( 'resize', me.onWindowResize, false );
-                
+
                 resolve();
             });
         });
@@ -104,8 +106,8 @@ function Surf(myParams) {
     },
     display: function display() {
         return me.init()
-        	.then(function () { return me.configure();})
-        	.then(function () { return me.animate();})
+            .then(function () { return me.configure();})
+            .then(function () { return me.animate();})
     },
     onWindowResize: function onWindowResize(e) {
         me.W = $(me.elem).width();
